@@ -5,6 +5,7 @@ if __name__ == "__main__":
     fname = sys.argv[1]
     urdf = ET.parse(fname)
     for link in urdf.findall('link'):
+        print(link)
         m = -1. # note 
         type = ''
         dims = {}
