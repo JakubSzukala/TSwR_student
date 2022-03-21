@@ -39,10 +39,10 @@ class ManiuplatorModel:
         M = np.array([
             [
                 self.alpha + 2 * self.beta * self.phi * np.cos(q2), 
-                self.gamma + self.beta * np.cos(q2)
+                self.gamma + self.beta * self.phi * np.cos(q2)
             ],
             [
-                self.gamma + self.beta * np.cos(q2),
+                self.gamma + self.beta * self.phi * np.cos(q2),
                 self.gamma
             ]
         ])
@@ -59,11 +59,11 @@ class ManiuplatorModel:
         
         C = np.array([
             [
-                -self.beta * np.sin(q2_dot), 
-                -self.beta * np.sin(q1_dot + q2_dot),
+                -self.beta * self.phi * np.sin(q2_dot), 
+                -self.beta * self.phi * np.sin(q1_dot + q2_dot),
             ],
             [
-                self.beta * np.sin(q1_dot), 
+                self.beta * self.phi * np.sin(q1_dot), 
                 0
             ]
         ])
